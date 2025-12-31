@@ -2,7 +2,7 @@ import os
 import arrow
 import requests
 import json
-
+print(f"API_KEY 是否在环境变量中: {'SG_API_KEY' in os.environ}")
 
 def Data_parsing(jsondata):
     data = {}
@@ -308,6 +308,7 @@ if __name__ == "__main__":
     weather_data = Data_parsing(get_weather())
     print(weather_data)
     generate_html_preview(weather_data)
+
 
 
 
