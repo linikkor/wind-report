@@ -36,7 +36,7 @@ def get_weather():
             'end': end.shift(days=4).to('UTC').timestamp()# Convert to UTC timestamp
         },
         headers={
-            'Authorization': '45d71ecc-e48a-11f0-a148-0242ac130003-45d71f26-e48a-11f0-a148-0242ac130003'
+            'Authorization': 'SG_API_KEY'
         }
     )
 
@@ -301,5 +301,6 @@ if __name__ == "__main__":
     weather_data = Data_parsing(get_weather())
     print(weather_data)
     generate_html_preview(weather_data)
+
 
 
