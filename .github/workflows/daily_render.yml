@@ -29,7 +29,7 @@ jobs:
       - name: Run render script
         env:
           # 格式：环境变量名: ${{ secrets.GitHub中的Secret名 }}
-          API_KEY: ${{ secrets.SG_API_KEY }}
+          SG_API_KEY: ${{ secrets.SG_API_KEY }}
         run: python render.py
 
       - name: Deploy to GitHub Pages
@@ -39,4 +39,5 @@ jobs:
           publish_dir: ./
 
           publish_branch: gh-pages
+
 
