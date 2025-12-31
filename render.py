@@ -22,6 +22,11 @@ def Data_parsing(jsondata):
 
 def get_weather():
     api_key = os.getenv('SG_API_KEY')
+    
+    if not api_key:
+        print("❌ 警告：未找到 API_KEY 环境变量！")
+    else:
+        print(f"✅ 成功读取 API_KEY，长度为: {len(api_key)}")
     # Get first hour of today
     start = arrow.now().floor('day')
 
@@ -303,6 +308,7 @@ if __name__ == "__main__":
     weather_data = Data_parsing(get_weather())
     print(weather_data)
     generate_html_preview(weather_data)
+
 
 
 
