@@ -27,6 +27,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run render script
+        env:
+          # 格式：环境变量名: ${{ secrets.GitHub中的Secret名 }}
+          API_KEY: ${{ secrets.SG_API_KEY }}
         run: python render.py
 
       - name: Deploy to GitHub Pages
@@ -34,4 +37,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
+
           publish_branch: gh-pages
