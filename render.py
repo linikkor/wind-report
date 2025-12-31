@@ -70,7 +70,7 @@ def generate_html_preview(weather_data):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>天气海洋监测 (集约表头版)</title>
+    <title>风浪矩阵</title>
     <style>
         :root {
             --bg-ocean: #0c4a6e;
@@ -308,6 +308,7 @@ if __name__ == "__main__":
     weather_data = Data_parsing(get_weather())
     #print(weather_data)
     generate_html_preview(weather_data)
+
 
 
 
