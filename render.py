@@ -50,7 +50,7 @@ def get_weather():
     # Do something with response data.
     json_data = response.json()
 
-    
+    print(json_data)
     return json_data
 
 def generate_html_preview(weather_data):
@@ -308,6 +308,7 @@ if __name__ == "__main__":
     weather_data = Data_parsing(get_weather())
     print(weather_data)
     generate_html_preview(weather_data)
+
 
 
 
