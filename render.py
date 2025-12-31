@@ -32,7 +32,7 @@ def get_weather():
             'lat': 39.895595, 
             'lng': 119.551064,
             'params': ','.join(['cloudCover', 'rain','airTemperature','windDirection','gust','windSpeed','swellDirection','swellHeight']),
-            'start':start.shift(days=1).to('UTC').timestamp(), # Convert to UTC timestamp
+            'start':start.to('UTC').timestamp(), # Convert to UTC timestamp
             'end': end.shift(days=4).to('UTC').timestamp()# Convert to UTC timestamp
         },
         headers={
@@ -301,4 +301,5 @@ if __name__ == "__main__":
     weather_data = Data_parsing(get_weather())
     print(weather_data)
     generate_html_preview(weather_data)
+
 
