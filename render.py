@@ -1,3 +1,4 @@
+import os
 import arrow
 import requests
 import json
@@ -302,6 +303,7 @@ if __name__ == "__main__":
     weather_data = Data_parsing(get_weather())
     print(weather_data)
     generate_html_preview(weather_data)
+
 
 
 
