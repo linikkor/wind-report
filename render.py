@@ -20,6 +20,7 @@ def Data_parsing(jsondata):
     return data
 
 def get_weather():
+    api_key = os.getenv('SG_API_KEY')
     # Get first hour of today
     start = arrow.now().floor('day')
 
@@ -36,7 +37,7 @@ def get_weather():
             'end': end.shift(days=4).to('UTC').timestamp()# Convert to UTC timestamp
         },
         headers={
-            'Authorization': 'SG_API_KEY'
+            'Authorization': api_key
         }
     )
 
@@ -301,6 +302,7 @@ if __name__ == "__main__":
     weather_data = Data_parsing(get_weather())
     print(weather_data)
     generate_html_preview(weather_data)
+
 
 
 
