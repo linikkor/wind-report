@@ -4,7 +4,7 @@ on:
   schedule:
     # 每天北京时间 08:00, 16:00, 00:00 运行
     # 对应 UTC 时间 00:00, 08:00, 16:00
-    - cron: '0 0,8,16 * * *'
+    - cron: '0 4,11,17 * * *'
   workflow_dispatch: # 方便你手动测试
 
 jobs:
@@ -39,6 +39,7 @@ jobs:
           publish_dir: ./
 
           publish_branch: gh-pages
+
 
 
 
